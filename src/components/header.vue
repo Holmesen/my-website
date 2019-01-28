@@ -14,8 +14,10 @@
 </template>
 
 <script>
+// import vueRouter from 'vue-router'
+
 export default {
-    name: 'myheader'
+    name: 'myheader',
 }
 </script>
 
