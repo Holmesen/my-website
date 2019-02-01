@@ -1,8 +1,10 @@
 <template>
     <div id="center-text">
-        <h4>HELLO PEOPLE,MY NAME IS</h4>
-        <h1>HOLMESEN</h1>
-        <h4>WELCOME TO MY WEBSITE</h4>
+        <div id="content-text">
+            <h4>HELLO PEOPLE,MY NAME IS</h4>
+            <h1>HOLMESEN</h1>
+            <h4>WELCOME TO MY WEBSITE</h4>
+        </div>
     </div>
 </template>
 
@@ -13,7 +15,16 @@ export default {
 </script>
 
 <style scoped>
-#center-text {
+#center-text{
+    display: flex;
+    flex-flow: column;
+    height: 700px;
+    width: auto;
+    background-image: url('../assets/topBg1.jpg');
+    padding-top: 200px;
+    align-content: center;
+}
+#content-text {
   display: flex;
   flex-flow: column;
   height: auto;
@@ -23,10 +34,10 @@ export default {
   margin: 50px auto;
   color: white;
 }
-#center-text>h4{
+#content-text>h4{
     font-size: 30px;
 }
-#center-text>h1{
+#content-text>h1{
     font-size: 60px;
 }
 </style>

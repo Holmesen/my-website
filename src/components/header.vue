@@ -6,8 +6,9 @@
             </div>
         </div>
         <div id="header-r">
-            <div><a href="javascript:;">HOME</a></div>
-            <div><a href="../../public/about.html">ABOUT</a></div>
+            <div><router-link :to="{name:'Home'}">HOME</router-link></div>
+            <!-- <div><a href="../../public/about.html">ABOUT</a></div> -->
+            <div><router-link :to="{name:'About'}">ABOUT</router-link></div>
             <div><a href="javascript:;">WORK</a></div>
         </div>
     </div>

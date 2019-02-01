@@ -1,30 +1,34 @@
 <template>
-    <div id="about">
-        <myheader></myheader>
-        <myfooter></myfooter>
-        <webinfo></webinfo>
-    </div>
+  <div id="about">
+    <myheader></myheader>
+    <aboutme></aboutme>
+    <myfooter></myfooter>
+    <webinfo></webinfo>
+  </div>
 </template>
 
 <script>
-import myheader from './components/header.vue'
-import myfooter from './components/footer'
-import webinfo from './components/webinfo'
+import myheader from "./header.vue";
+import myfooter from "./footer";
+import webinfo from "./webinfo";
+import aboutme from "./about-centerText";
 
 export default {
-    name: 'about',
-    components: {
-        myheader,
-        myfooter,
-        webinfo
-    }
-}
+  name: "about",
+  components: {
+    myheader,
+    myfooter,
+    webinfo,
+    aboutme
+  }
+};
 </script>
 
 <style scoped>
-#about{
-    height: auto;
-    width: auto;
-    display: flex;
+#about {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: column;
 }
 </style>
