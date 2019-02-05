@@ -1,6 +1,6 @@
 <template>
   <div>
-    <myheader></myheader>
+    <myheader myactive="home"></myheader>
     <div id="topBlock">
       <centertext></centertext>
     </div>
@@ -27,8 +27,10 @@ export default {
     myfooter,
     webinfo
   },
-  data(){
-      return {}
+  data() {
+    return {
+      isActive: "home"
+    };
   }
 };
 </script>

@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from '@/components/home'
 import About from '@/components/about'
 import HeroPage from '@/components/heroPage'
+import WorkPage from '@/components/work'
 
 Vue.use(Router)
 
@@ -25,14 +26,14 @@ export default new Router({
         component: About
     },
     {
-        path: '/home',
-        name: 'Home',
-        component: Home
-    },
-    {
       path: '/hero',
       name: 'HeroPage',
       component: HeroPage
+    },
+    {
+      path: '/work',
+      name: 'WorkPage',
+      component: WorkPage
     }
   ]
 })

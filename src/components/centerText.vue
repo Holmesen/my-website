@@ -18,7 +18,7 @@ export default {
 #center-text{
     display: flex;
     flex-flow: column;
-    height: 700px;
+    height: 505px;
     width: auto;
     background-image: url('../assets/topBg1.jpg');
     padding-top: 200px;

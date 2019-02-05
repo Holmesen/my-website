@@ -108,7 +108,7 @@ export default {
 }
 #heroInfo > div > p {
   font-size: 15px;
-  line-height: 20px;
+  line-height: 30px;
   margin-top: 20px;
 }
 </style>

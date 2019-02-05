@@ -3,17 +3,20 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <router-view>
+      <home></home>
     </router-view>
   </div>
 </template>
 
 <script>
 // import myheader from './components/header'
+import home from './components/home'
 
 export default {
   name: "app",
   components: {
     // myheader
+    home
   }
 };
 </script>
