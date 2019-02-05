@@ -2,7 +2,7 @@
     <div id="header">
         <div id="header-l">
             <div>
-                <a href="javascript:;">INSTANT</a>
+                <router-link :to="{name:'Page404'}">INSTANT</router-link>
             </div>
         </div>
         <div id="header-r">

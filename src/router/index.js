@@ -5,6 +5,7 @@ import Home from '@/components/home'
 import About from '@/components/about'
 import HeroPage from '@/components/heroPage'
 import WorkPage from '@/components/work'
+import Page404 from '@/components/404'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/work',
       name: 'WorkPage',
       component: WorkPage
+    },
+    {
+      path: '/404',
+      name: 'Page404',
+      component: Page404
     }
   ]
 })
