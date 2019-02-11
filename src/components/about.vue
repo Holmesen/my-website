@@ -1,7 +1,8 @@
 <template>
   <div id="about">
-    <myheader myactive="about"></myheader>
-    <aboutme></aboutme>
+    <myheader myactive="about" activeTitle="ABOUT"></myheader>
+    <!-- <aboutme></aboutme> -->
+    <blog-content></blog-content>
     <myfooter></myfooter>
     <webinfo></webinfo>
   </div>
@@ -11,7 +12,8 @@
 import myheader from "./header.vue";
 import myfooter from "./footer";
 import webinfo from "./webinfo";
-import aboutme from "./about-centerText";
+// import aboutme from "./about-centerText";
+import blogContent from "./blogContent"
 
 export default {
   name: "about",
@@ -19,7 +21,8 @@ export default {
     myheader,
     myfooter,
     webinfo,
-    aboutme
+    // aboutme,
+    blogContent
   }
 };
 </script>

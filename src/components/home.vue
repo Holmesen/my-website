@@ -1,6 +1,6 @@
 <template>
   <div>
-    <myheader myactive="home"></myheader>
+    <myheader myactive="home" activeTitle="HOME"></myheader>
     <div id="topBlock">
       <centertext></centertext>
     </div>

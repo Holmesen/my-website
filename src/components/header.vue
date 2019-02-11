@@ -1,8 +1,9 @@
 <template>
     <div id="header">
         <div id="header-l">
-            <div>
-                <router-link :to="{name:'Page404'}">INSTANT</router-link>
+            <div id="activeTitle">
+                <!-- <router-link :to="{name:'Page404'}">INSTANT</router-link> -->
+                <p>{{activeTitle}}</p>
             </div>
         </div>
         <div id="header-r">
@@ -26,7 +27,8 @@
 export default {
   name: "myheader",
   props: {
-    myactive: String
+    myactive: String,
+    activeTitle: String
   },
   data() {
     return {};
@@ -79,6 +81,17 @@ export default {
 #header-l a:hover,
 #header-r a:hover {
   color: antiquewhite;
+}
+#activeTitle{
+  height: auto;
+  width: auto;
+  padding: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+#activeTitle>p{
+  margin: auto;
 }
 
 .active {

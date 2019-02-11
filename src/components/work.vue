@@ -1,6 +1,6 @@
 <template>
     <div id="about">
-        <myheader myactive="work"></myheader>
+        <myheader myactive="work" activeTitle="WORK"></myheader>
         <mywork></mywork>
         <myfooter></myfooter>
         <webinfo></webinfo>
