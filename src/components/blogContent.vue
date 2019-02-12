@@ -135,6 +135,7 @@ export default {
   letter-spacing: 40px;
   margin: auto;
   font-weight: bold;
+  cursor: pointer;
 }
 #blogCategory {
   display: flex;
@@ -150,7 +151,7 @@ export default {
   display: flex;
   flex-flow: row;
   /* padding: 10px; */
-  padding: 40px 0px 0px 135px;
+  padding: 40px 0px 0px 105px;
   align-content: center;
 }
 .categoryTitle {

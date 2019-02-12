@@ -1,7 +1,8 @@
 <template>
     <div id="about">
         <myheader myactive="work" activeTitle="WORK"></myheader>
-        <mywork></mywork>
+        <!-- <mywork></mywork> -->
+        <blog-article></blog-article>
         <myfooter></myfooter>
         <webinfo></webinfo>
     </div>
@@ -11,7 +12,8 @@
 import myheader from "./header.vue";
 import myfooter from "./footer";
 import webinfo from "./webinfo";
-import mywork from "./mywork";
+// import mywork from "./mywork";
+import blogArticle from "./blogArticle"
 
 export default {
   name: "work",
@@ -19,7 +21,8 @@ export default {
     myheader,
     myfooter,
     webinfo,
-    mywork
+    // mywork
+    blogArticle
   }
 };
 </script>
