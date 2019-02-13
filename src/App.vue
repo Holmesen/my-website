@@ -11,6 +11,7 @@
 <script>
 // import myheader from './components/header'
 import home from './components/home'
+import {} from './Dandelion.js'
 
 export default {
   name: "app",
