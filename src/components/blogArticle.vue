@@ -31,12 +31,18 @@
                 <span>我也不知道下一篇是什么</span>
             </div>
         </div>
+        <leave-msg></leave-msg>
     </div>
 </template>
 
 <script>
+import leaveMsg from './leaveMsg'
+
 export default {
-  name: "blogArticle"
+  name: "blogArticle",
+  components: {
+    leaveMsg
+  }
 };
 </script>
 
