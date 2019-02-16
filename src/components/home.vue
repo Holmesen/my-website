@@ -4,7 +4,8 @@
     <div id="topBlock">
       <centertext></centertext>
     </div>
-    <card-list></card-list>
+    <!-- <card-list></card-list> -->
+    <ablum></ablum>
     <myfooter></myfooter>
     <webinfo></webinfo>
   </div>
@@ -13,19 +14,21 @@
 <script>
 import myheader from "./header.vue";
 import centertext from "./centerText";
-import cardList from "./cardList";
+// import cardList from "./cardList";
 import myfooter from "./footer";
 import webinfo from "./webinfo";
+import ablum from "./album";
+
 
 export default {
   name: "home",
   components: {
-    // HelloWorld
     myheader,
     centertext,
-    cardList,
+    // cardList,
     myfooter,
-    webinfo
+    webinfo,
+    ablum
   },
   data() {
     return {

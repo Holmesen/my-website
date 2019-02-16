@@ -39,18 +39,24 @@
               >文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介</p>
             </div>
             <div class="articleComp">
-              <p style="font-size:14px; color:#ff7f21;">查看文章</p>
+              <p style="font-size:14px; color:#ff7f21;cursor: pointer;">查看文章</p>
             </div>
           </div>
         </div>
       </div>
+      <pagination></pagination>
     </div>
   </div>
 </template>
 
 <script>
+import pagination from './pagination'
+
 export default {
-  name: "blogContent"
+  name: "blogContent",
+  components: {
+    pagination
+  }
 };
 </script>
 
