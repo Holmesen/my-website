@@ -1,110 +1,119 @@
-<!--<template>
+<template>
   <div id="login">
-     <div id="log_in" style="height:auto;">
-            <h1>Log In</h1>
-            <table>
-                <tr>
-                    <td></td>
-                    <td><input type="text" name="username" placeholder="Username" class="input"></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="password" name="password" placeholder="Password" class="input"></td>
-                    <td><span style="font-size:14px; color:#009ad6;line-height:40px; margin-left:10px; cursor:pointer;">忘记密码</span></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="log in" class="btn"></td>
-                    <td></td>
-                </tr>
-            </table>
-            <p class="tips">Not registered? <span>Create an account</span></p>
-            <span>用户名或密码不正确</span>
-    </div>
-    <div id="sign_up" style="height:auto;">
-      <h1>Sign Up</h1>
-      <table>
-        <tr>
-          <td></td>
-          <td>
-            <input type="text" name="username" placeholder="Username" class="input">
-          </td>
-          <td>
-            <img
-              src="../assets/username_true.png"
-              alt
-              style="height:18px;width:18px; margin:auto 10px;"
-            >
-            <span
-              style="margin:auto 10px; font-size:15px; line-height:40px; color:#d93a49;"
-            >该用户名已被注册</span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <input type="password" name="password" placeholder="Password" class="input">
-          </td>
-          <td>
-            <span
-              style="color:#d93a49; line-height:40px; margin-left:10px; font-size:15px;"
-            >密码不得小于6位</span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <input type="password" name="confirmPwd" placeholder="Confirm Password" class="input">
-          </td>
-          <td>
-            <span style="color:#d93a49; line-height:40px; margin-left:10px; font-size:15px;">密码不一致</span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <input type="submit" value="sign up" class="btn">
-          </td>
-          <td></td>
-        </tr>
-      </table>
-      <p class="tips">
-        Already registered?
-        <span>Log In</span>
-      </p>
-    </div>
+    <transition leave-active-class="animated zoomOutDown" enter-active-class="animated zoomInDown">
+      <div
+        v-if="isLogin"
+        id="log_in"
+        style="height:auto; position:absolute; top:50%; left:50%; margin-top:-208px; margin-left:-478px;"
+      >
+        <h1>Log In</h1>
+        <table>
+          <tr>
+            <td></td>
+            <td>
+              <input type="text" name="username" placeholder="Username" class="input">
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="password" name="password" placeholder="Password" class="input">
+            </td>
+            <td>
+              <span
+                style="font-size:14px; color:#009ad6;line-height:40px; margin-left:10px; cursor:pointer;"
+              >忘记密码</span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <transition leave-active-class="animated hinge"  enter-active-class="animated zoomInUp"><input v-show="isShow" @click="isShow=!isShow" type="submit" value="log in" class="btn"></transition>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+        <p class="tips">Not registered?
+          <span @click="isLogin=false">Create an account</span>
+        </p>
+        <!-- <span>用户名或密码不正确</span> -->
+      </div>
+    </transition>
+    <transition leave-active-class="animated zoomOutDown" enter-active-class="animated zoomInDown">
+      <div
+        v-if="!isLogin"
+        id="sign_up"
+        style="height:auto; position:absolute; top:50%; left:50%; margin-top:-208px; margin-left:-478px;"
+      >
+        <h1>Sign Up</h1>
+        <table>
+          <tr>
+            <td></td>
+            <td>
+              <input type="text" name="username" placeholder="Username" class="input">
+            </td>
+            <td>
+              <img
+                src="../assets/username_true.png"
+                alt
+                style="height:18px;width:18px; margin:auto 10px;"
+              >
+              <span
+                style="margin:auto 10px; font-size:15px; line-height:40px; color:#d93a49;"
+              >该用户名已被注册</span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="password" name="password" placeholder="Password" class="input">
+            </td>
+            <td>
+              <span
+                style="color:#d93a49; line-height:40px; margin-left:10px; font-size:15px;"
+              >密码不得小于6位</span>
+            </td>
+          </tr>
+          <!-- <tr>
+            <td></td>
+            <td>
+              <input type="password" name="confirmPwd" placeholder="Confirm Password" class="input">
+            </td>
+            <td>
+              <span style="color:#d93a49; line-height:40px; margin-left:10px; font-size:15px;">密码不一致</span>
+            </td>
+          </tr> -->
+          <tr>
+            <td></td>
+            <td>
+              <input type="submit" value="sign up" class="btn">
+            </td>
+            <td></td>
+          </tr>
+        </table>
+        <p class="tips">
+          Already registered?
+          <span @click="isLogin=true">Log In</span>
+        </p>
+      </div>
+    </transition>
   </div>
-</template>-->
+</template>
 
-<!--<script>
-import vuePose from "vue-pose";
-
+<script>
 export default {
   name: "login",
-  components: {
-    Parent: posed.ul(config),
-    Child: posed.li(childConfig)
+  data: () => {
+    return {
+      isLogin: true,
+      isShow:true
+    };
   },
-  template: `<Parent :pose="isOpen ? 'open' : 'closed'">
-    <Child v-for="item in items" />
-  </Parent>`
-
-  //   components: {
-  //     Box: vuePose.div({
-  //       visible: {
-  //         opacity: 1,
-  //         scaleY: 1,
-  //         transition: {
-  //           opacity: { ease: "easeOut", duration: 300 },
-  //           default: { ease: "linear", duration: 500 }
-  //         }
-  //       },
-  //       hidden: { opacity: 0 }
-  //     })
-  //   }
+  methods: {
+  }
 };
-</script>-->
+</script>
 
 <style scoped>
 #login {
@@ -115,7 +124,7 @@ export default {
   margin: auto;
   align-content: center;
   background: #092756;
-  background-image: linear-gradient(to bottom right, #220f3d, #192e50);
+  background-image: linear-gradient(to bottom right, #5e3597, #167ba3);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
 #log_in,
@@ -209,188 +218,4 @@ export default {
   color: #afdfe4;
   cursor: pointer;
 }
-
-@keyframes loginTaggle {
-  /* 0%   {background: red; left:0px; top:0px;}
-    25%  {background: yellow; left:200px; top:0px;}
-    50%  {background: blue; left:200px; top:200px;}
-    75%  {background: green; left:0px; top:200px;}
-    100% {background: red; left:0px; top:0px;} */
-  /* -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear; */
-}
-
-@-webkit-keyframes loginTaggle /* Safari 与 Chrome */ {
-  0% {
-    background: red;
-    left: 0px;
-    top: 0px;
-  }
-  25% {
-    background: yellow;
-    left: 200px;
-    top: 0px;
-  }
-  50% {
-    background: blue;
-    left: 200px;
-    top: 200px;
-  }
-  75% {
-    background: green;
-    left: 0px;
-    top: 200px;
-  }
-  100% {
-    background: red;
-    left: 0px;
-    top: 0px;
-  }
-}
-#sign_up {
-  animation: loginTaggle 5s;
-  -webkit-animation: loginTaggle 5s; /* Safari 与 Chrome */
-}
-
-
-
-body {
-  display: flex;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-
-.sidebar {
-  background: #54e365;
-  padding: 20px;
-}
-
-.item {
-  width: 300px;
-  height: 50px;
-  border-radius: 5px;
-  background: #fff;
-  margin-bottom: 10px;
-}
 </style>
-
-<template>
-  <Sidebar class="sidebar" :pose="isVisible ? 'visible': 'hidden'">
-    <!-- <Item class="item" v-for="item in items" v-bind:key="item" /> -->
-    <div id="sign_up" style="height:auto;">
-      <h1>Sign Up</h1>
-      <table>
-        <tr>
-          <td></td>
-          <td>
-            <input type="text" name="username" placeholder="Username" class="input">
-          </td>
-          <td>
-            <img
-              src="../assets/username_true.png"
-              alt
-              style="height:18px;width:18px; margin:auto 10px;"
-            >
-            <span
-              style="margin:auto 10px; font-size:15px; line-height:40px; color:#d93a49;"
-            >该用户名已被注册</span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <input type="password" name="password" placeholder="Password" class="input">
-          </td>
-          <td>
-            <span
-              style="color:#d93a49; line-height:40px; margin-left:10px; font-size:15px;"
-            >密码不得小于6位</span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <input type="password" name="confirmPwd" placeholder="Confirm Password" class="input">
-          </td>
-          <td>
-            <span style="color:#d93a49; line-height:40px; margin-left:10px; font-size:15px;">密码不一致</span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <input type="submit" value="sign up" class="btn">
-          </td>
-          <td></td>
-        </tr>
-      </table>
-      <p class="tips">
-        Already registered?
-        <span>Log In</span>
-      </p>
-    </div>
-  </Sidebar>
-</template>
-
-<script>
-import posed from 'vue-pose';
-
-export default {
-  data: () => ({
-    isVisible: false,
-    items: [0, 1, 2, 3, 4]
-  }),
-  mounted() {
-    setInterval(() => {
-      this.isVisible = !this.isVisible;
-    }, 2000);
-  },
-  components: {
-    Sidebar: posed.div({
-      visible: {
-        x: 0,
-        beforeChildren: true,
-        staggerChildren: 30
-      },
-      hidden: {
-        x: '-100%',
-        afterChildren: true
-      }
-    }),
-    // Item: posed.div({
-    //   visible: { opacity: 1, y: 0 },
-    //   hidden: { opacity: 0, y: 20 }
-    // })
-  }
-};
-</script>
-
-<!--<style>
-body {
-  display: flex;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-
-.sidebar {
-  background: #54e365;
-  padding: 20px;
-}
-
-.item {
-  width: 300px;
-  height: 50px;
-  border-radius: 5px;
-  background: #fff;
-  margin-bottom: 10px;
-}
-</style>-->

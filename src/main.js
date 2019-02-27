@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+// import animated from 'animate.css'
+require('animate.css/animate.min.css');
 
 Vue.config.productionTip = false
+
+// Vue.use(animated)
 
 new Vue({
   router,
